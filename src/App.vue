@@ -1,16 +1,18 @@
 <template>
   <div id="app">
+    <NavBar/>
     <GeoMap/>
   </div>
 </template>
 
 <script>
 import GeoMap from './components/GeoMap.vue'
-
+import NavBar from './components/NavBar.vue'
 export default {
   name: 'app',
   components: {
-    GeoMap
+    GeoMap, 
+    NavBar
   }
 }
 </script>
@@ -22,6 +24,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>

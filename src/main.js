@@ -1,15 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueChartkick from 'vue-chartkick'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vue from 'vue';
+import App from './App.vue';
+import Vuetify from 'vuetify';
+import VueFusionCharts from 'vue-fusioncharts';
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+import CandyTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
+import Maps from 'fusioncharts/fusioncharts.maps';
+import World from 'fusioncharts/maps/fusioncharts.world';
+import 'vuetify/dist/vuetify.min.css';
 
-Vue.use(Vuetify)
-Vue.use(VueChartkick)
+Vue.use(Vuetify);
+Vue.use(VueFusionCharts, FusionCharts, Charts, CandyTheme, Maps, World);
 
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: h => h(App)
+}).$mount('#app');
