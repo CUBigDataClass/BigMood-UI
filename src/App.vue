@@ -1,29 +1,39 @@
 <template>
   <div id="app">
     <NavBar/>
-    <GeoMap/>
+    <div class="chart">
+      <GeoMap/>
+    </div>
   </div>
 </template>
 
 <script>
-import GeoMap from './components/GeoMap.vue'
-import NavBar from './components/NavBar.vue'
+import GeoMap from "./components/GeoMap.vue";
+import NavBar from "./components/NavBar.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    GeoMap, 
+    GeoMap,
     NavBar
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
   /* margin-top: 60px; */
+}
+.chart {
+  margin-top: 40px;
+}
+body {
+  background-image: url("./assets/bg.png");
+  background-size: cover;
 }
 </style>

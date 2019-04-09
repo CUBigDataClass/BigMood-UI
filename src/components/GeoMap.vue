@@ -500,8 +500,8 @@ export default {
         // { text: "Woeid", value: "Woeid" }
       ],
       trends: [],
-      width: "80%",
-      height: "600",
+      width: "50%",
+      height: "400",
       type: "world",
       dataFormat: "json",
       dataSource

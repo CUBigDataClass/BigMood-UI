@@ -2,10 +2,9 @@
   <v-card
     color="grey lighten-4"
     flat
-    height="100px"
     tile
   >
-    <v-toolbar color = 'teal lighten-3'>
+    <v-toolbar dark color = 'blue darken-2'>
       <v-toolbar-side-icon></v-toolbar-side-icon>
 
       <v-toolbar-title class="text-lg-center">BigMood Dashboard</v-toolbar-title>
