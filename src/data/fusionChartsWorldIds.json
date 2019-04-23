@@ -1,0 +1,1450 @@
+{
+    "AG":  
+       {
+          "ID": 1,
+          "CountryLabel": "Antigua and Barbuda"
+       }
+      ,
+    "BS":  
+       {
+          "ID": 2,
+          "CountryLabel": "Bahamas"
+       }
+      ,
+    "BB":  
+       {
+          "ID": 3,
+          "CountryLabel": "Barbados"
+       }
+      ,
+    "BZ":  
+       {
+          "ID": 4,
+          "CountryLabel": "Belize"
+       }
+      ,
+    "CA":
+       {
+          "ID": 5,
+          "CountryLabel": "Canada"
+       }
+      ,
+    "CR":  
+       {
+          "ID": 6,
+          "CountryLabel": "Costa Rica"
+       }
+      ,
+    "CU":  
+       {
+          "ID": 7,
+          "CountryLabel": "Cuba"
+       }
+      ,
+    "DM":  
+       {
+          "ID": 8,
+          "CountryLabel": "Dominica"
+       }
+      ,
+    "DO":  
+       {
+          "ID": 9,
+          "CountryLabel": "Dominican Republic"
+       }
+      ,
+    "SV":  
+       {
+          "ID": 10,
+          "CountryLabel": "El Salvador"
+       },
+    "GD":  
+       {
+          "ID": 11,
+          "CountryLabel": "Grenada"
+       }
+      ,
+    "GT":  
+       {
+          "ID": 12,
+          "CountryLabel": "Guatemala"
+       }
+      ,
+    "HT":  
+       {
+          "ID": 13,
+          "CountryLabel": "Haiti"
+       }
+      ,
+    "HN":  
+       {
+          "ID": 14,
+          "CountryLabel": "Honduras"
+       }
+      ,
+    "JM":  
+       {
+          "ID": 15,
+          "CountryLabel": "Jamaica"
+       }
+      ,
+    "MX":  
+       {
+          "ID": 16,
+          "CountryLabel": "Mexico"
+       }
+      ,
+    "NI":  
+       {
+          "ID": 17,
+          "CountryLabel": "Nicaragua"
+       }
+      ,
+    "PA":  
+       {
+          "ID": 18,
+          "CountryLabel": "Panama"
+       }
+      ,
+    "KN":  
+       {
+          "ID": 19,
+          "CountryLabel": "St. Kitts & Nevis"
+       }
+      ,
+    "LC":  
+       {
+          "ID": 20,
+          "CountryLabel": "St. Lucia"
+       }
+      ,
+    "VC":  
+       {
+          "ID": 21,
+          "CountryLabel": "St. Vincent & the Grenadines"
+       }
+      ,
+    "TT":  
+       {
+          "ID": 22,
+          "CountryLabel": "Trinidad & Tobago"
+       }
+      ,
+    "US":  
+       {
+          "ID": 23,
+          "CountryLabel": "United States"
+       }
+      ,
+    "GL":  
+       {
+          "ID": 24,
+          "CountryLabel": "Greenland"
+       }
+      ,
+    "AR":  
+       {
+          "ID": 25,
+          "CountryLabel": "Argentina"
+       }
+      ,
+    "BO":  
+       {
+          "ID": 26,
+          "CountryLabel": "Bolivia"
+       }
+      ,
+    "BR":  
+       {
+          "ID": 27,
+          "CountryLabel": "Brazil"
+       }
+      ,
+    "CL":  
+       {
+          "ID": 28,
+          "CountryLabel": "Chile"
+       }
+      ,
+    "CO":  
+       {
+          "ID": 29,
+          "CountryLabel": "Colombia"
+       }
+      ,
+    "EC":  
+       {
+          "ID": 30,
+          "CountryLabel": "Ecuador"
+       }
+      ,
+    "FK":  
+       {
+          "ID": 31,
+          "CountryLabel": "Falkland Islands"
+       }
+      ,
+    "GF":  
+       {
+          "ID": 32,
+          "CountryLabel": "French Guiana"
+       }
+      ,
+    "GY":  
+       {
+          "ID": 33,
+          "CountryLabel": "Guyana"
+       }
+      ,
+    "PY":  
+       {
+          "ID": 34,
+          "CountryLabel": "Paraguay"
+       }
+      ,
+    "PE":  
+       {
+          "ID": 35,
+          "CountryLabel": "Peru"
+       }
+      ,
+    "SR":  
+       {
+          "ID": 36,
+          "CountryLabel": "Suriname"
+       }
+      ,
+    "UY":  
+       {
+          "ID": 37,
+          "CountryLabel": "Uruguay"
+       }
+      ,
+    "VE":  
+       {
+          "ID": 38,
+          "CountryLabel": "Venezuela"
+       }
+      ,
+    "DZ":  
+       {
+          "ID": 39,
+          "CountryLabel": "Algeria"
+       }
+      ,
+    "AO":  
+       {
+          "ID": 40,
+          "CountryLabel": "Angola"
+       }
+      ,
+    "BJ":  
+       {
+          "ID": 41,
+          "CountryLabel": "Benin"
+       }
+      ,
+    "BW":  
+       {
+          "ID": 42,
+          "CountryLabel": "Botswana"
+       }
+      ,
+    "BF":  
+       {
+          "ID": 43,
+          "CountryLabel": "Burkina Faso"
+       }
+      ,
+    "BI":  
+       {
+          "ID": 44,
+          "CountryLabel": "Burundi"
+       }
+      ,
+    "CM":  
+       {
+          "ID": 45,
+          "CountryLabel": "Cameroon"
+       }
+      ,
+    "CV":  
+       {
+          "ID": 46,
+          "CountryLabel": "Cape Verde"
+       }
+      ,
+    "CP":  
+       {
+          "ID": 47,
+          "CountryLabel": "Central African Republic"
+       }
+      ,
+    "TD":  
+       {
+          "ID": 48,
+          "CountryLabel": "Chad"
+       }
+      ,
+    "KM":  
+       {
+          "ID": 49,
+          "CountryLabel": "Comoros"
+       }
+      ,
+    "CI":  
+       {
+          "ID": 50,
+          "CountryLabel": "Ivory Coast"
+       }
+      ,
+    "CD":  
+       {
+          "ID": 51,
+          "CountryLabel": "DR Congo"
+       }
+      ,
+    "DJ":  
+       {
+          "ID": 52,
+          "CountryLabel": "Djibouti"
+       }
+      ,
+    "EG":  
+       {
+          "ID": 53,
+          "CountryLabel": "Egypt"
+       }
+      ,
+    "GQ":  
+       {
+          "ID": 54,
+          "CountryLabel": "Equatorial Guinea"
+       }
+      ,
+    "ER":  
+       {
+          "ID": 55,
+          "CountryLabel": "Eritrea"
+       }
+      ,
+    "ET":  
+       {
+          "ID": 56,
+          "CountryLabel": "Ethiopia"
+       }
+      ,
+    "GA":  
+       {
+          "ID": 57,
+          "CountryLabel": "Gabon"
+       }
+      ,
+    "GH":  
+       {
+          "ID": 58,
+          "CountryLabel": "Ghana"
+       }
+      ,
+    "GN":  
+       {
+          "ID": 59,
+          "CountryLabel": "Guinea"
+       }
+      ,
+    "GW":  
+       {
+          "ID": 60,
+          "CountryLabel": "Guinea-Bissau"
+       }
+      ,
+    "KE":  
+       {
+          "ID": 61,
+          "CountryLabel": "Kenya"
+       }
+      ,
+    "LS":  
+       {
+          "ID": 62,
+          "CountryLabel": "Lesotho"
+       }
+      ,
+    "LI":  
+       {
+          "ID": 63,
+          "CountryLabel": "Liberia"
+       }
+      ,
+    "LR":  
+       {
+          "ID": 64,
+          "CountryLabel": "Libya"
+       }
+      ,
+    "MS":  
+       {
+          "ID": 65,
+          "CountryLabel": "Madagascar"
+       }
+      ,
+    "MW":  
+       {
+          "ID": 66,
+          "CountryLabel": "Malawi"
+       }
+      ,
+    "ML":  
+       {
+          "ID": 67,
+          "CountryLabel": "Mali"
+       }
+      ,
+    "MR":  
+       {
+          "ID": 68,
+          "CountryLabel": "Mauritania"
+       }
+      ,
+    "MA":  
+       {
+          "ID": 69,
+          "CountryLabel": "Morocco"
+       }
+      ,
+    "MZ":  
+       {
+          "ID": 70,
+          "CountryLabel": "Mozambique"
+       }
+      ,
+    "NA":
+       {
+          "ID": 245,
+          "CountryLabel": "Netherlands Antilles"
+       }
+      ,
+    "NE":  
+       {
+          "ID": 72,
+          "CountryLabel": "Niger"
+       }
+      ,
+    "NG":  
+       {
+          "ID": 73,
+          "CountryLabel": "Nigeria"
+       }
+      ,
+    "RW":  
+       {
+          "ID": 74,
+          "CountryLabel": "Rwanda"
+       }
+      ,
+    "ST":  
+       {
+          "ID": 75,
+          "CountryLabel": "Sao Tome and Principe"
+       }
+      ,
+    "SN":  
+       {
+          "ID": 76,
+          "CountryLabel": "Senegal"
+       }
+      ,
+    "SC":  
+       {
+          "ID": 77,
+          "CountryLabel": "Seychelles"
+       }
+      ,
+    "SL":  
+       {
+          "ID": 78,
+          "CountryLabel": "Sierra Leone"
+       }
+      ,
+    "SO":  
+       {
+          "ID": 79,
+          "CountryLabel": "Somalia"
+       }
+      ,
+    "ZA":  
+       {
+          "ID": 80,
+          "CountryLabel": "South Africa"
+       }
+      ,
+    "SD":  
+       {
+          "ID": 81,
+          "CountryLabel": "Republic of Sudan"
+       }
+      ,
+    "SZ":  
+       {
+          "ID": 82,
+          "CountryLabel": "Swaziland"
+       }
+      ,
+    "TZ":  
+       {
+          "ID": 83,
+          "CountryLabel": "Tanzania"
+       }
+      ,
+    "TG":  
+       {
+          "ID": 84,
+          "CountryLabel": "Togo"
+       }
+      ,
+    "TN":  
+       {
+          "ID": 85,
+          "CountryLabel": "Tunisia"
+       }
+      ,
+    "UG":  
+       {
+          "ID": 86,
+          "CountryLabel": "Uganda"
+       }
+      ,
+    "WA":  
+       {
+          "ID": 87,
+          "CountryLabel": "Western Sahara"
+       }
+      ,
+    "ZM":  
+       {
+          "ID": 88,
+          "CountryLabel": "Zambia"
+       }
+      ,
+    "ZW":  
+       {
+          "ID": 89,
+          "CountryLabel": "Zimbabwe"
+       }
+      ,
+    "GM":  
+       {
+          "ID": 90,
+          "CountryLabel": "Gambia"
+       }
+      ,
+    "CG":  
+       {
+          "ID": 91,
+          "CountryLabel": "Congo"
+       }
+      ,
+    "MI":  
+       {
+          "ID": 92,
+          "CountryLabel": "Mauritius"
+       }
+      ,
+    "AF":  
+       {
+          "ID": 93,
+          "CountryLabel": "Afghanistan"
+       }
+      ,
+    "AM":  
+       {
+          "ID": 94,
+          "CountryLabel": "Armenia"
+       }
+      ,
+    "AZ":  
+       {
+          "ID": 95,
+          "CountryLabel": "Azerbaijan"
+       }
+      ,
+    "BD":  
+       {
+          "ID": 96,
+          "CountryLabel": "Bangladesh"
+       }
+      ,
+    "BT":  
+       {
+          "ID": 97,
+          "CountryLabel": "Bhutan"
+       }
+      ,
+    "BN":  
+       {
+          "ID": 98,
+          "CountryLabel": "Brunei"
+       }
+      ,
+    "MM":  
+       {
+          "ID": 99,
+          "CountryLabel": "Burma (Myanmar)"
+       }
+      ,
+    "KH":  
+       {
+          "ID": 100,
+          "CountryLabel": "Cambodia"
+       }
+      ,
+    "CN":  
+       {
+          "ID": 101,
+          "CountryLabel": "China"
+       }
+      ,
+    "TP":  
+       {
+          "ID": 102,
+          "CountryLabel": "Timor-Leste"
+       }
+      ,
+    "GE":  
+       {
+          "ID": 103,
+          "CountryLabel": "Georgia"
+       }
+      ,
+    "IN":  
+       {
+          "ID": 104,
+          "CountryLabel": "India"
+       }
+      ,
+    "ID":  
+       {
+          "ID": 105,
+          "CountryLabel": "Indonesia"
+       }
+      ,
+    "IA":  
+       {
+          "ID": 106,
+          "CountryLabel": "Iran"
+       }
+      ,
+    "JP":  
+       {
+          "ID": 107,
+          "CountryLabel": "Japan"
+       }
+      ,
+    "KZ":  
+       {
+          "ID": 108,
+          "CountryLabel": "Kazakhstan"
+       }
+      ,
+    "KP":  
+       {
+          "ID": 109,
+          "CountryLabel": "Korea (north)"
+       }
+      ,
+    "KR":  
+       {
+          "ID": 110,
+          "CountryLabel": "Korea (south)"
+       }
+      ,
+    "KG":  
+       {
+          "ID": 111,
+          "CountryLabel": "Kyrgyzstan"
+       }
+      ,
+    "LA":  
+       {
+          "ID": 112,
+          "CountryLabel": "Laos"
+       }
+      ,
+    "MY":  
+       {
+          "ID": 113,
+          "CountryLabel": "Malaysia"
+       }
+      ,
+    "MN":  
+       {
+          "ID": 114,
+          "CountryLabel": "Mongolia"
+       }
+      ,
+    "NP":  
+       {
+          "ID": 115,
+          "CountryLabel": "Nepal"
+       }
+      ,
+    "PK":  
+       {
+          "ID": 116,
+          "CountryLabel": "Pakistan"
+       }
+      ,
+    "PH":  
+       {
+          "ID": 117,
+          "CountryLabel": "Philippines"
+       }
+      ,
+    "RU":  
+       {
+          "ID": 118,
+          "CountryLabel": "Russia"
+       }
+      ,
+    "SG":  
+       {
+          "ID": 119,
+          "CountryLabel": "Singapore"
+       }
+      ,
+    "LK":  
+       {
+          "ID": 120,
+          "CountryLabel": "Sri Lanka"
+       }
+      ,
+    "TJ":  
+       {
+          "ID": 121,
+          "CountryLabel": "Tajikistan"
+       }
+      ,
+    "TH":  
+       {
+          "ID": 122,
+          "CountryLabel": "Thailand"
+       }
+      ,
+    "TM":  
+       {
+          "ID": 123,
+          "CountryLabel": "Turkmenistan"
+       }
+      ,
+    "UZ":  
+       {
+          "ID": 124,
+          "CountryLabel": "Uzbekistan"
+       }
+      ,
+    "VN":  
+       {
+          "ID": 125,
+          "CountryLabel": "Vietnam"
+       }
+      ,
+    "TW":  
+       {
+          "ID": 126,
+          "CountryLabel": "Taiwan"
+       }
+      ,
+    "HK":  
+       {
+          "ID": 127,
+          "CountryLabel": "Hong Kong"
+       }
+      ,
+    "MO":  
+       {
+          "ID": 128,
+          "CountryLabel": "Macau"
+       }
+      ,
+    "AL":  
+       {
+          "ID": 129,
+          "CountryLabel": "Albania"
+       }
+      ,
+    "AD":  
+       {
+          "ID": 130,
+          "CountryLabel": "Andorra"
+       }
+      ,
+    "AT":  
+       {
+          "ID": 131,
+          "CountryLabel": "Austria"
+       }
+      ,
+    "BY":  
+       {
+          "ID": 132,
+          "CountryLabel": "Belarus"
+       }
+      ,
+    "BE":  
+       {
+          "ID": 133,
+          "CountryLabel": "Belgium"
+       }
+      ,
+    "BH":  
+       {
+          "ID": 134,
+          "CountryLabel": "Bosnia and Herzegovina"
+       }
+      ,
+    "BG":  
+       {
+          "ID": 135,
+          "CountryLabel": "Bulgaria"
+       }
+      ,
+    "HY":  
+       {
+          "ID": 136,
+          "CountryLabel": "Croatia"
+       }
+      ,
+    "CZ":  
+       {
+          "ID": 137,
+          "CountryLabel": "Czech Republic"
+       }
+      ,
+    "DK":  
+       {
+          "ID": 138,
+          "CountryLabel": "Denmark"
+       }
+      ,
+    "EE":  
+       {
+          "ID": 139,
+          "CountryLabel": "Estonia"
+       }
+      ,
+    "FI":  
+       {
+          "ID": 140,
+          "CountryLabel": "Finland"
+       }
+      ,
+    "FR":  
+       {
+          "ID": 141,
+          "CountryLabel": "France"
+       }
+      ,
+    "DE":  
+       {
+          "ID": 142,
+          "CountryLabel": "Germany"
+       }
+      ,
+    "GR":  
+       {
+          "ID": 143,
+          "CountryLabel": "Greece"
+       }
+      ,
+    "HU":  
+       {
+          "ID": 144,
+          "CountryLabel": "Hungary"
+       }
+      ,
+    "IC":  
+       {
+          "ID": 145,
+          "CountryLabel": "Iceland"
+       }
+      ,
+    "IR":  
+       {
+          "ID": 146,
+          "CountryLabel": "Ireland"
+       }
+      ,
+    "IT":  
+       {
+          "ID": 147,
+          "CountryLabel": "Italy"
+       }
+      ,
+    "LV":  
+       {
+          "ID": 148,
+          "CountryLabel": "Latvia"
+       }
+      ,
+    "LN":  
+       {
+          "ID": 149,
+          "CountryLabel": "Liechtenstein"
+       }
+      ,
+    "LT":  
+       {
+          "ID": 150,
+          "CountryLabel": "Lithuania"
+       }
+      ,
+    "LU":  
+       {
+          "ID": 151,
+          "CountryLabel": "Luxembourg"
+       }
+      ,
+    "MK":  
+       {
+          "ID": 152,
+          "CountryLabel": "Macedonia"
+       }
+      ,
+    "MT":  
+       {
+          "ID": 153,
+          "CountryLabel": "Malta"
+       }
+      ,
+    "MV":  
+       {
+          "ID": 154,
+          "CountryLabel": "Moldova"
+       }
+      ,
+    "MC":  
+       {
+          "ID": 155,
+          "CountryLabel": "Monaco"
+       }
+      ,
+    "MG":  
+       {
+          "ID": 156,
+          "CountryLabel": "Montenegro"
+       }
+      ,
+    "NL":  
+       {
+          "ID": 157,
+          "CountryLabel": "Netherlands"
+       }
+      ,
+    "NO":  
+       {
+          "ID": 158,
+          "CountryLabel": "Norway"
+       }
+      ,
+    "PL":  
+       {
+          "ID": 159,
+          "CountryLabel": "Poland"
+       }
+      ,
+    "PT":  
+       {
+          "ID": 160,
+          "CountryLabel": "Portugal"
+       }
+      ,
+    "RO":  
+       {
+          "ID": 161,
+          "CountryLabel": "Romania"
+       }
+      ,
+    "SM":  
+       {
+          "ID": 162,
+          "CountryLabel": "San Marino"
+       }
+      ,
+    "CS":  
+       {
+          "ID": 163,
+          "CountryLabel": "Serbia"
+       }
+      ,
+    "SK":  
+       {
+          "ID": 164,
+          "CountryLabel": "Slovakia"
+       }
+      ,
+    "SI":  
+       {
+          "ID": 165,
+          "CountryLabel": "Slovenia"
+       }
+      ,
+    "ES":  
+       {
+          "ID": 166,
+          "CountryLabel": "Spain"
+       }
+      ,
+    "SE":  
+       {
+          "ID": 167,
+          "CountryLabel": "Sweden"
+       }
+      ,
+    "CH":  
+       {
+          "ID": 168,
+          "CountryLabel": "Switzerland"
+       }
+      ,
+    "UA":  
+       {
+          "ID": 169,
+          "CountryLabel": "Ukraine"
+       }
+      ,
+    "UK":  
+       {
+          "ID": 170,
+          "CountryLabel": "United Kingdom"
+       }
+      ,
+    "VA":  
+       {
+          "ID": 171,
+          "CountryLabel": "Vatican City"
+       }
+      ,
+    "CY":  
+       {
+          "ID": 172,
+          "CountryLabel": "Cyprus"
+       }
+      ,
+    "TK":  
+       {
+          "ID": 173,
+          "CountryLabel": "Turkey"
+       },
+    "AU":  
+       {
+          "ID": 175,
+          "CountryLabel": "Australia"
+       }
+      ,
+    "FJ":  
+       {
+          "ID": 176,
+          "CountryLabel": "Fiji"
+       }
+      ,
+    "KI":  
+       {
+          "ID": 177,
+          "CountryLabel": "Kiribati"
+       }
+      ,
+    "MH":  
+       {
+          "ID": 178,
+          "CountryLabel": "Marshall Islands"
+       }
+      ,
+    "FM":  
+       {
+          "ID": 179,
+          "CountryLabel": "Micronesia"
+       }
+      ,
+    "NR":  
+       {
+          "ID": 180,
+          "CountryLabel": "Nauru"
+       }
+      ,
+    "NZ":  
+       {
+          "ID": 181,
+          "CountryLabel": "New Zealand"
+       }
+      ,
+    "PW":  
+       {
+          "ID": 182,
+          "CountryLabel": "Republic of Palau"
+       }
+      ,
+    "PG":  
+       {
+          "ID": 183,
+          "CountryLabel": "Papua New Guinea"
+       }
+      ,
+    "WS":  
+       {
+          "ID": 184,
+          "CountryLabel": "Samoa"
+       }
+      ,
+    "SB":  
+       {
+          "ID": 185,
+          "CountryLabel": "Solomon Islands"
+       }
+      ,
+    "TO":  
+       {
+          "ID": 186,
+          "CountryLabel": "Tonga"
+       }
+      ,
+    "TV":  
+       {
+          "ID": 187,
+          "CountryLabel": "Tuvalu"
+       }
+      ,
+    "VU":  
+       {
+          "ID": 188,
+          "CountryLabel": "Vanuatu"
+       }
+      ,
+    "NC":
+       {
+          "ID": 246,
+          "CountryLabel": "Northern Cyprus"
+       },
+    "BA":  
+       {
+          "ID": 190,
+          "CountryLabel": "Bahrain"
+       }
+      ,
+    "IZ":  
+       {
+          "ID": 191,
+          "CountryLabel": "Iraq"
+       }
+      ,
+    "IS":  
+       {
+          "ID": 192,
+          "CountryLabel": "Israel"
+       }
+      ,
+    "JO":  
+       {
+          "ID": 193,
+          "CountryLabel": "Jordan"
+       }
+      ,
+    "KU":  
+       {
+          "ID": 194,
+          "CountryLabel": "Kuwait"
+       }
+      ,
+    "LB":  
+       {
+          "ID": 195,
+          "CountryLabel": "Lebanon"
+       }
+      ,
+    "OM":  
+       {
+          "ID": 196,
+          "CountryLabel": "Oman"
+       }
+      ,
+    "QA":  
+       {
+          "ID": 197,
+          "CountryLabel": "Qatar"
+       }
+      ,
+    "SA":  
+       {
+          "ID": 198,
+          "CountryLabel": "Saudi Arabia"
+       }
+      ,
+    "SY":  
+       {
+          "ID": 199,
+          "CountryLabel": "Syria"
+       }
+      ,
+    "AE":  
+       {
+          "ID": 200,
+          "CountryLabel": "UnitedArabEmirates"
+       }
+      ,
+    "YM":  
+       {
+          "ID": 201,
+          "CountryLabel": "Yemen"
+       }
+      ,
+    "PR":  
+       {
+          "ID": 202,
+          "CountryLabel": "Puerto Rico"
+       }
+      ,
+    "KY":  
+       {
+          "ID": 203,
+          "CountryLabel": "Cayman Islands"
+       }
+      ,
+    "SS":  
+       {
+          "ID": 204,
+          "CountryLabel": "South Sudan"
+       }
+      ,
+    "KO":  
+       {
+          "ID": 205,
+          "CountryLabel": "Kosovo"
+       }
+      ,
+    "AB":  
+       {
+          "ID": 206,
+          "CountryLabel": "Aruba"
+       },
+    "AN":  
+       {
+          "ID": 207,
+          "CountryLabel": "Anguilla"
+       }
+      ,
+    "AS":  
+       {
+          "ID": 208,
+          "CountryLabel": "American Samoa"
+       }
+      ,
+    "BM":  
+       {
+          "ID": 209,
+          "CountryLabel": "Bermuda"
+       }
+      ,
+    "BU":  
+       {
+          "ID": 210,
+          "CountryLabel": "BES Islands"
+       }
+      ,
+    "CC":  
+       {
+          "ID": 211,
+          "CountryLabel": "Cocos (Keeling) Islands"
+       }
+      ,
+    "CK":  
+       {
+          "ID": 212,
+          "CountryLabel": "Cook Islands"
+       }
+      ,
+    "CT":  
+       {
+          "ID": 213,
+          "CountryLabel": "Christmas Island"
+       }
+      ,
+    "CW":  
+       {
+          "ID": 214,
+          "CountryLabel": "Curacao"
+       }
+      ,
+    "FA":  
+       {
+          "ID": 215,
+          "CountryLabel": "Faroe Islands"
+       }
+      ,
+    "FP":  
+       {
+          "ID": 216,
+          "CountryLabel": "French Polynesia"
+       }
+      ,
+    "GI":  
+       {
+          "ID": 217,
+          "CountryLabel": "Gibraltar"
+       }
+      ,
+    "GO":  
+       {
+          "ID": 218,
+          "CountryLabel": "Guam"
+       }
+      ,
+    "GP":  
+       {
+          "ID": 219,
+          "CountryLabel": "Guadeloupe"
+       }
+      ,
+    "GS":  
+       {
+          "ID": 220,
+          "CountryLabel": "Gaza Strip"
+       }
+      ,
+    "GU":  
+       {
+          "ID": 221,
+          "CountryLabel": "Guernsey"
+       }
+      ,
+    "IM":  
+       {
+          "ID": 222,
+          "CountryLabel": "Isle of Man"
+       }
+      ,
+    "JS":  
+       {
+          "ID": 223,
+          "CountryLabel": "Jersey"
+       }
+      ,
+    "KS":  
+       {
+          "ID": 224,
+          "CountryLabel": "Kingman Reef"
+       }
+      ,
+    "MD":  
+       {
+          "ID": 225,
+          "CountryLabel": "Maldives"
+       }
+      ,
+    "ME":  
+       {
+          "ID": 226,
+          "CountryLabel": "Montserrat"
+       }
+      ,
+    "MP":  
+       {
+          "ID": 227,
+          "CountryLabel": "Mayotte"
+       }
+      ,
+    "MQ":  
+       {
+          "ID": 228,
+          "CountryLabel": "Martinique"
+       }
+      ,
+    "NF":  
+       {
+          "ID": 229,
+          "CountryLabel": "Norfolk Island"
+       }
+      ,
+    "NM":  
+       {
+          "ID": 230,
+          "CountryLabel": "Northern Mariana Islands"
+       }
+      ,
+    "NU":  
+       {
+          "ID": 231,
+          "CountryLabel": "Niue"
+       }
+      ,
+    "PI":  
+       {
+          "ID": 232,
+          "CountryLabel": "Pitcairn Islands"
+       }
+      ,
+    "RE":  
+       {
+          "ID": 233,
+          "CountryLabel": "La Réunion"
+       }
+      ,
+    "SF":  
+       {
+          "ID": 234,
+          "CountryLabel": "Sint Maarten"
+       }
+      ,
+    "SH":  
+       {
+          "ID": 235,
+          "CountryLabel": "Saint Helena"
+       }
+      ,
+    "SP":  
+       {
+          "ID": 236,
+          "CountryLabel": "Saint Pierre and Miquelon"
+       }
+      ,
+    "TC":  
+       {
+          "ID": 237,
+          "CountryLabel": "Turks and Caicos Islands"
+       }
+      ,
+    "VK":  
+       {
+          "ID": 238,
+          "CountryLabel": "Virgin Islands (UK)"
+       }
+      ,
+    "VS":  
+       {
+          "ID": 239,
+          "CountryLabel": "Virgin Islands (US)"
+       }
+      ,
+    "WE":  
+       {
+          "ID": 240,
+          "CountryLabel": "Palestine"
+       }
+      ,
+    "WF":  
+       {
+          "ID": 241,
+          "CountryLabel": "Wallis and Futuna"
+       }
+      ,
+    "WC":  
+       {
+          "ID": 242,
+          "CountryLabel": "Cape Town"
+       }
+      ,
+    "LP":  
+       {
+          "ID": 243,
+          "CountryLabel": "La Paz"
+       }
+      
+ }
