@@ -15,6 +15,7 @@ import NavBar from "./components/NavBar.vue";
 import WordCloud from "./components/WordCloud.vue";
 import GeoMap from "./components/GeoMap.vue";
 
+
 export default {
   name: "app",
   components: {
