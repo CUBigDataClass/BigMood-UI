@@ -7,8 +7,10 @@ import Charts from 'fusioncharts/fusioncharts.charts';
 import CandyTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
 import Maps from 'fusioncharts/fusioncharts.maps';
 import World from 'fusioncharts/maps/fusioncharts.world';
-import WorldWithCountries from 'fusioncharts/maps/fusioncharts.worldwithcountries';
+import Usa from 'fusionmaps/maps/fusioncharts.usa';
 import 'vuetify/dist/vuetify.min.css';
+import FusionMaps from 'fusioncharts/fusioncharts.maps';
+import WorldWithCountries from 'fusionmaps/maps/fusioncharts.worldwithcountries';
 
 Vue.use(Vuetify);
 Vue.use(
@@ -19,6 +21,7 @@ Vue.use(
   Maps,
   World,
   WorldWithCountries,
+  Usa
 );
 
 Vue.config.productionTip = false;
