@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import GeoMap from "./components/GeoMap.vue";
 import NavBar from "./components/NavBar.vue";
 import WordCloud from "./components/WordCloud.vue";
-import GeoMap from './components/GeoMap.vue'
+import GeoMap from "./components/GeoMap.vue";
+
 export default {
   name: "app",
   components: {
     GeoMap,
-    NavBar
+    NavBar,
     WordCloud
   }
 };
@@ -32,18 +32,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-  /* margin-top: 60px; */
 }
 .chart {
   margin-top: 40px;
-  /* text-align: center; */
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 .margin {
-  margin-top:100px;
+  margin-top: 100px;
 }
 body {
   background-image: url("./assets/bg.png");
