@@ -1,17 +1,23 @@
 <template>
-  <v-card class="mx-auto" color="#212121" dark max-width="800">
+  <v-card class="mx-auto" color="#212121" dark max-width="70%" height="500">
     <v-card-title>
-      <v-icon large left>mdi-twitter</v-icon>
-      <span class="title font-weight-heavy">Twitter Trend Word Cloud</span>
+      <v-icon large center>mdi-twitter</v-icon>
+      <span class="title font-weight-heavy center">Twitter Trend Word Cloud</span>
     </v-card-title>
     <v-card-text>
-      <wordcloud :data="words" nameKey="name" valueKey="value" :wordClick="wordClickHandler"></wordcloud>
+      <wordcloud
+        :data="words"
+        nameKey="name"
+        valueKey="value"
+        :wordClick="wordClickHandler"
+        :showTooltip="false"
+      ></wordcloud>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-// import axios from "axios";
+// TO DO: Add cursor:pointer to wordcloud
 import wordcloud from "vue-wordcloud";
 
 export default {
@@ -19,13 +25,12 @@ export default {
   components: {
     wordcloud
   },
-  props: ['words', 'urls'],
+  props: ["words", "urls"],
   methods: {
     wordClickHandler(name, value, vm) {
-      // console.log("wordClickHandler", name, value);
-      const url = this.urls[name]
-      window.open(url, '_blank');
-    },
+      const url = this.urls[name];
+      window.open(url, "_blank");
+    }
   },
   data() {
     return {
@@ -35,3 +40,10 @@ export default {
   }
 };
 </script>
+
+<style>
+
+.cursor {
+  cursor: pointer;
+}
+</style>
