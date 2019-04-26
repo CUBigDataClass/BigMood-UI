@@ -1,8 +1,19 @@
 <template>
   <div id="app">
     <NavBar/>
+    <div>
+      <CityView 
+        :cityTrends="cityTrends"
+        :countryCode="countryCode"
+        :urls="cityUrls"
+        :words="cityWords"
+      />
+    </div>
+    <!-- <div>
+      <GeoMapGCharts :cityTrends='cityTrends' :countryCode='countryCode'/>
+    </div>-->
     <div class="chart" v-if="!loading">
-      <WorldMap :data='countryTrends'/>
+      <WorldMap :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
     <div class="margin" v-if="!loading">
       <WordCloud :words="defaultWords" :urls="urls"/>
@@ -14,14 +25,18 @@
 import NavBar from "./components/NavBar.vue";
 import WordCloud from "./components/WordCloud.vue";
 import WorldMap from "./components/WorldMap.vue";
+import CityView from "./components/CityView.vue";
 import axios from "axios";
+// import GeoMapGCharts from './components/GeoMapGCharts.vue';
 
 export default {
   name: "app",
   components: {
     WorldMap,
     NavBar,
-    WordCloud
+    WordCloud,
+    CityView
+    // GeoMapGCharts
   },
   data() {
     return {
@@ -30,6 +45,11 @@ export default {
       urls: {},
       trends: [],
       countryTrends: [],
+      cityTrends: [],
+      countryCode: null,
+      cityUrls: {},
+      showCityView: false,
+      cityWords: null
     };
   },
   methods: {
@@ -48,22 +68,38 @@ export default {
       return a;
     },
 
-    getWords() {
+    showCityInfo(country) {
+      this.cityTrends = this.trends.filter(
+        item => item.country == country && item.locationType == "City"
+      );
+      if (this.cityTrends) {
+        this.countryCode = this.cityTrends[0].countryCode;
+        [this.cityWords, this.cityUrls] = this.getWords(this.cityTrends);
+        console.log(this.cityWords, this.cityUrls);
+        this.showCityView = true
+      } else {
+        console.log("No Trends");
+      }
+    },
+
+    getWords(trends) {
       const words = [];
-      this.trends.forEach(item => {
+      let urls = {};
+      trends.forEach(item => {
         item.trends.forEach(trend => {
-          this.urls[trend.name] = trend.url;
+          urls[trend.name] = trend.url;
           words.push(trend.name);
         });
       });
       const wordle = this.counter(words);
-      this.defaultWords = [];
+      const defaultWords = [];
       Object.keys(wordle).map(key => {
-        this.defaultWords.push({
+        defaultWords.push({
           name: key,
-          value: wordle[key] * 10
+          value: wordle[key]
         });
       });
+      return [defaultWords, urls];
     }
   },
   beforeCreate() {
@@ -71,8 +107,11 @@ export default {
       .get("http://35.239.169.14:3000/bigmoodapi/trends")
       .then(response => {
         this.trends = response.data;
-        this.getWords(this.trends);
-        this.countryTrends = this.trends.filter(item => item.locationType == 'Country');
+        [this.defaultWords, this.urls] = this.getWords(this.trends);
+        console.log(this.defaultWords, this.urls)
+        this.countryTrends = this.trends.filter(
+          item => item.locationType == "Country"
+        );
         // console.log(this.countryTrends);
       })
       .catch(error => {
@@ -90,6 +129,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-image: url("./assets/bg.png");
+  background-size: cover;
 }
 .chart {
   margin-top: 40px;

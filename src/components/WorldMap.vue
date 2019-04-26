@@ -14,11 +14,9 @@
 <script>
 import axios from "axios";
 import countryIdsFusionCharts from "../data/fusionChartsWorldIds.json";
-import GeoMapGCharts from "./GeoMapGCharts";
 export default {
   name: "WorldMap",
   props: ["data"],
-  components: {},
   created() {
     this.trendData = this.getDataObjectForMap(this.data);
     this.dataSource["data"] = this.trendData;
@@ -27,7 +25,8 @@ export default {
   methods: {
     getCountry(event) {
       this.country = event.data.label;
-      console.log(this.country);
+      this.$emit('selectedCountry', this.country);
+
     },
     getDataObjectForMap(trends) {
       const dataSource = [];
@@ -36,6 +35,7 @@ export default {
         const id = countryIdsFusionCharts[trend.countryCode];
         if (!id) {
           console.log(trend.country);
+          console.log(trend.countryCode)
         } else {
           let obj = {
             id: id["ID"].toString(),
@@ -46,7 +46,6 @@ export default {
               trendingHashtag.name +
               "{br}Tweet Volume: " +
               trendingHashtag.tweetVolume,
-            link: ""
           };
           dataSource.push(obj);
         }
@@ -80,13 +79,13 @@ export default {
           color: [
             {
               minvalue: "-1",
-              maxvalue: "-0.7",
+              maxvalue: "-0.3",
               color: "#DC143C"
             },
             {
-              minvalue: "-0.7",
+              minvalue: "-0.3",
               maxvalue: "0.3",
-              color: "#FFE303	"
+              color: "#FFE303"
             },
             {
               minvalue: "0.3",
