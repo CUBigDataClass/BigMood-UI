@@ -868,7 +868,7 @@
           "CountryLabel": "Iceland"
        }
       ,
-    "IR":  
+    "IE":  
        {
           "ID": 146,
           "CountryLabel": "Ireland"
@@ -1012,7 +1012,7 @@
           "CountryLabel": "Ukraine"
        }
       ,
-    "UK":  
+    "GB":  
        {
           "ID": 170,
           "CountryLabel": "United Kingdom"
@@ -1030,7 +1030,7 @@
           "CountryLabel": "Cyprus"
        }
       ,
-    "TK":  
+    "TR":  
        {
           "ID": 173,
           "CountryLabel": "Turkey"
@@ -1136,7 +1136,7 @@
           "CountryLabel": "Iraq"
        }
       ,
-    "IS":  
+    "IL":  
        {
           "ID": 192,
           "CountryLabel": "Israel"

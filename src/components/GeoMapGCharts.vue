@@ -1,43 +1,16 @@
 <template>
-  <div class='center'>
-    <GChart
-    :settings="{ packages: ['geochart', 'table', 'map'], mapsApiKey: 'AIzaSyBEJFeCpbl5tIQXvI5_C0XLhSnwfpHAe-E' }"
-      type="GeoChart"
-      :data="chartData"
-      :options="chartOptions"
-      
-    />
-    <!-- <geo-chart :data="chartData"></geo-chart> -->
-  </div>
+  <div id="chart_div" style="width: 900px; height: 500px;"></div>
 </template>
   
 <script>
 export default {
   name: "GeoMapGCharts",
+  props: ["countryCode", "cityTrends"],
   data() {
     return {
-      // Array will be automatically processed with visualization.arrayToDataTable function
-      chartData: [
-        ["Country", "Popularity"],
-        ["Germany", 200],
-        ["United States", 300],
-        ["Brazil", 400],
-        ["Canada", 500],
-        ["France", 600],
-        ["RU", 700]
-        // ['City', 'Popularity'],
-        // ['Rome',      276147],
-        // ['Milan',     1324110],
-        // ['Naples',    959574],
-        // ['Turin',     907563],
-        // ['Palermo',   655875],
-        // ['Genoa',     607906],
-        // ['Bologna',   380181],
-        // ['Florence',  371281],
-        // ['Fiumicino', 67370],
-        // ['Anzio',     52192],
-        // ['Ciampino',  38262]
-      ],
+      chart: null,
+      region: "IT",
+      cityData: null,
       chartOptions: {
         chart: {
           title: "Company Performance",
@@ -45,6 +18,74 @@ export default {
         }
       }
     };
+  },
+  watch: {
+    countryCode: function(newCode) {
+      this.region = newCode;
+    },
+    cityTrends: function(newCityTrends) {
+      this.cityTrends = newCityTrends;
+      this.cityData = [];
+      this.data = new google.visualization.DataTable();
+      this.data.addColumn("string", "City");
+      this.data.addColumn("number", "Sentiment");
+      this.data.addColumn({ type: "string", role: "tooltip" });
+      newCityTrends.forEach(element => {
+        const tooltip =
+          "Top Trends\n" +
+          element.trends[0].name +
+          "\n" +
+          element.trends[1].name +
+          "\n" +
+          element.trends[2].name;
+        this.cityData.push([
+          element.city,
+          element.trends[0].sentiment,
+          tooltip
+        ]);
+      });
+      this.data.addRows(this.cityData);
+      google.charts.setOnLoadCallback(this.drawRegionsMap);
+    }
+  },
+  created() {
+    google.charts.load("current", {
+      packages: ["geochart"],
+      mapsApiKey: ""
+    });
+  },
+
+  methods: {
+    cityClickedHandler(event) {
+      const row_index = this.chart.getSelection()[0]["row"];
+      if (row_index != undefined) {
+        const url = this.cityTrends[row_index].trends[0].url;
+        window.open(url, "_blank");
+      }
+    },
+    drawRegionsMap() {
+      const options = {
+        region: this.region,
+        displayMode: "markers",
+        backgroundColor: "#2c3e50",
+        colorAxis: {
+          colors: ["#DC143C", "#FFE303", "#32CD32"],
+          minValue: -1,
+          maxValue: 1
+        },
+        showZoomOut: true
+      };
+
+      this.chart = new google.visualization.GeoChart(
+        document.getElementById("chart_div")
+      );
+      google.visualization.events.addListener(
+        this.chart,
+        "select",
+        this.cityClickedHandler
+      );
+      this.chart.draw(this.data, options);
+    }
   }
 };
 </script>
