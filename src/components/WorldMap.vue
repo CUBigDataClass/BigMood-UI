@@ -30,11 +30,11 @@ export default {
     getDataObjectForMap(trends) {
       const dataSource = [];
       trends.forEach(trend => {
-        const trendingHashtag = trend.trends[0];
+        if ('trends' in trend) {
+          const trendingHashtag = trend.trends[0];
         const id = countryIdsFusionCharts[trend.countryCode];
-        if (!id) {
-          console.log(trend.country);
-          console.log(trend.countryCode)
+        if (!id || !trendingHashtag) {
+          console.log('trending issue', trend)
         } else {
           let obj = {
             id: id["ID"].toString(),
@@ -48,6 +48,9 @@ export default {
           };
           dataSource.push(obj);
         }
+
+        }
+        
       });
       return dataSource;
     }
