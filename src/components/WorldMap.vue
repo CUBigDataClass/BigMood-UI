@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import countryIdsFusionCharts from "../data/fusionChartsWorldIds.json";
 export default {
   name: "WorldMap",

@@ -1,24 +1,25 @@
 <template>
   <div id="app">
     <NavBar/>
-    <div>
-      <CityView 
+    <!-- <div v-if="showCityView"> -->
+      <CityView
         :cityTrends="cityTrends"
         :countryCode="countryCode"
         :urls="cityUrls"
-        :words="cityWords"
+        :defaultWords="cityWords"
+        :countryTrends="singleCountry"
+        :country="country"
       />
+    <!-- </div>
+    <div v-else> -->
+      <div class="chart" v-if="!loading">
+        <WorldMap :data="countryTrends" @selectedCountry="showCityInfo"/>
+      </div>
+      <div class="margin" v-if="!loading">
+        <WordCloud :words="defaultWords" :urls="urls"/>
+      </div>
     </div>
-    <!-- <div>
-      <GeoMapGCharts :cityTrends='cityTrends' :countryCode='countryCode'/>
-    </div>-->
-    <div class="chart" v-if="!loading">
-      <WorldMap :data="countryTrends" @selectedCountry="showCityInfo"/>
-    </div>
-    <div class="margin" v-if="!loading">
-      <WordCloud :words="defaultWords" :urls="urls"/>
-    </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -49,7 +50,10 @@ export default {
       countryCode: null,
       cityUrls: {},
       showCityView: false,
-      cityWords: null
+      cityWords: null,
+      singleCountry: null,
+      showCityView: false,
+      country: "",
     };
   },
   methods: {
@@ -69,14 +73,17 @@ export default {
     },
 
     showCityInfo(country) {
+      this.country = country
       this.cityTrends = this.trends.filter(
         item => item.country == country && item.locationType == "City"
       );
       if (this.cityTrends) {
         this.countryCode = this.cityTrends[0].countryCode;
         [this.cityWords, this.cityUrls] = this.getWords(this.cityTrends);
-        console.log(this.cityWords, this.cityUrls);
-        this.showCityView = true
+        this.singleCountry = this.trends.filter(
+          item => item.country == country && item.locationType == "Country"
+        )[0].trends;
+        this.showCityView = true;
       } else {
         console.log("No Trends");
       }
@@ -108,11 +115,9 @@ export default {
       .then(response => {
         this.trends = response.data;
         [this.defaultWords, this.urls] = this.getWords(this.trends);
-        console.log(this.defaultWords, this.urls)
         this.countryTrends = this.trends.filter(
           item => item.locationType == "Country"
         );
-        // console.log(this.countryTrends);
       })
       .catch(error => {
         this.error = error;

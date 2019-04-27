@@ -26,6 +26,15 @@ export default {
     wordcloud
   },
   props: ["words", "urls"],
+  watch: {
+    words: function(newWords) {
+      this.words = newWords
+      console.log('WordCloud Component', this.words)
+    },
+    urls: function(newUrls) {
+      this.urls = newUrls
+    }
+  },
   methods: {
     wordClickHandler(name, value, vm) {
       const url = this.urls[name];
