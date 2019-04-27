@@ -36,17 +36,11 @@ export default {
     }
   },
   methods: {
-    wordClickHandler(name, value, vm) {
+    wordClickHandler(name) {
       const url = this.urls[name];
       window.open(url, "_blank");
     }
   },
-  data() {
-    return {
-      defaultWords: null,
-      loading: true
-    };
-  }
 };
 </script>
 

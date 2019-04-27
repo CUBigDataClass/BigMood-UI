@@ -1,6 +1,6 @@
 <template>
   <div>
-    <GeoMapGCharts v-if='cityTrends' :cityTrends="cityTrends" :countryCode="countryCode"/>
+    <GeoMapGCharts :cityTrends="cityTrends" :countryCode="countryCode"/>
     <WordCloud v-if="defaultWords" :words="defaultWords" :urls="urls"/>
     <div class="barChart">
       <TrendBarChart :countryTrends="countryTrends"/>

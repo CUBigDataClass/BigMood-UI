@@ -10,13 +10,6 @@ export default {
     return {
       chart: null,
       region: "IT",
-      cityData: null,
-      chartOptions: {
-        chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017"
-        }
-      }
     };
   },
   watch: {
@@ -25,7 +18,7 @@ export default {
     },
     cityTrends: function(newCityTrends) {
       this.cityTrends = newCityTrends;
-      this.cityData = [];
+      const cityData = [];
       this.data = new google.visualization.DataTable();
       this.data.addColumn("string", "City");
       this.data.addColumn("number", "Sentiment");
@@ -38,13 +31,9 @@ export default {
           element.trends[1].name +
           "\n" +
           element.trends[2].name;
-        this.cityData.push([
-          element.city,
-          element.trends[0].sentiment,
-          tooltip
-        ]);
+        cityData.push([element.city, element.trends[0].sentiment, tooltip]);
       });
-      this.data.addRows(this.cityData);
+      this.data.addRows(cityData);
       google.charts.setOnLoadCallback(this.drawRegionsMap);
     }
   },
