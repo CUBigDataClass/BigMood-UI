@@ -10,16 +10,17 @@
         :countryTrends="singleCountry"
         :country="country"
       />
-    <!-- </div>
-    <div v-else> -->
+    <!-- </div> -->
+    <!-- World View -->
+    <!-- <div v-else> -->
       <div class="chart" v-if="!loading">
         <WorldMap :data="countryTrends" @selectedCountry="showCityInfo"/>
       </div>
       <div class="margin" v-if="!loading">
         <WordCloud :words="defaultWords" :urls="urls"/>
       </div>
-    </div>
-  <!-- </div> -->
+    <!-- </div> -->
+  </div>
 </template>
 
 <script>
@@ -28,7 +29,6 @@ import WordCloud from "./components/WordCloud.vue";
 import WorldMap from "./components/WorldMap.vue";
 import CityView from "./components/CityView.vue";
 import axios from "axios";
-// import GeoMapGCharts from './components/GeoMapGCharts.vue';
 
 export default {
   name: "app",
@@ -37,7 +37,6 @@ export default {
     NavBar,
     WordCloud,
     CityView
-    // GeoMapGCharts
   },
   data() {
     return {
@@ -53,7 +52,7 @@ export default {
       cityWords: null,
       singleCountry: null,
       showCityView: false,
-      country: "",
+      country: ""
     };
   },
   methods: {
@@ -73,7 +72,7 @@ export default {
     },
 
     showCityInfo(country) {
-      this.country = country
+      this.country = country;
       this.cityTrends = this.trends.filter(
         item => item.country == country && item.locationType == "City"
       );
