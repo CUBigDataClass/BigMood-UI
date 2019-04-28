@@ -71,7 +71,7 @@ export default {
       );
       if (this.cityTrends) {
         this.countryCode = this.cityTrends[0].countryCode;
-        [this.cityWords, this.cityUrls] = this.getWords(this.cityTrends);
+        [this.defaultWords, this.urls] = this.getWords(this.cityTrends);
         this.singleCountry = this.trends.filter(
           item => item.country == country && item.locationType == "Country"
         )[0].trends;

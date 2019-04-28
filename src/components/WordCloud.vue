@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class='wordcloud'>
     <AppCloud
       :data="words"
       nameKey="name"
@@ -36,3 +36,9 @@ export default {
   }
 };
 </script>
+<style>
+.wordcloud {
+  background-color: #2d4053;
+}
+</style>
+

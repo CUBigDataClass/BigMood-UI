@@ -63,7 +63,7 @@ export default {
       const options = {
         region: this.countryCode,
         displayMode: "markers",
-        backgroundColor: "#2c3e50",
+        backgroundColor: "#1b2732", //"#262933",
         colorAxis: {
           colors: ["#DC143C", "#FFE303", "#32CD32"],
           minValue: -1,
