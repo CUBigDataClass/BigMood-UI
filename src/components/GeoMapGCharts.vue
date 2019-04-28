@@ -18,7 +18,7 @@ export default {
   mounted() {
     google.charts.load("current", {
       packages: ["geochart"],
-      mapsApiKey: "AIzaSyAUVVIxD52x1Yk5BhlwyTEjxzGrr_jsn-Q"
+      mapsApiKey: ""
     });
     google.charts.setOnLoadCallback(this.setupChart);
   },
