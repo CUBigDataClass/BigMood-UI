@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="grid-container">
     <div class="map">
-      <div class="back" v-if="isCityView" @click="isCityView = false">
+      <div class="back" v-if="isCityView" @click="showCountryView">
         <img src="./assets/ic-back.png">
       </div>
       <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode"/>
@@ -81,6 +81,14 @@ export default {
       }
     },
 
+    showCountryView() {
+      this.isCityView = false
+      this.defaultWords = this.countryWords
+      this.singleCountry = this.globalTrends
+      this.urls = this.countryUrls
+
+    },
+
     getWords(trends) {
       const words = [];
       let urls = {};
@@ -106,6 +114,8 @@ export default {
         .then(response => {
           this.trends = response.data;
           [this.defaultWords, this.urls] = this.getWords(this.trends);
+          this.countryWords = this.defaultWords
+          this.countryUrls = this.urls
           this.countryTrends = this.trends.filter(
             item => item.locationType == "Country"
           );
@@ -121,6 +131,7 @@ export default {
         .get("http://35.194.37.111:3000/bigmoodapi/globaltrends")
         .then(response => {
           this.singleCountry = response.data;
+          this.globalTrends = this.singleCountry;
         })
         .catch(error => {
           this.error = error;
