@@ -1,5 +1,8 @@
 <template>
-  <section class='wordcloud'>
+  <section class="wordcloud">
+    <div class="box">
+      Twitter Trend Word Cloud
+    </div>
     <AppCloud
       :data="words"
       nameKey="name"
@@ -39,6 +42,13 @@ export default {
 <style>
 .wordcloud {
   background-color: #262933;
+}
+.box {
+  color: white;
+  padding: 10px;
+  font-family: "Fira Sans Regular";
+  font-size: 18px;
+  text-align: center;
 }
 </style>
 
