@@ -2,8 +2,8 @@
   <div v-if="!loading">
     <fusioncharts
       :type="type"
-      :width="width"
-      :height="height"
+      width="100%"
+      height="500"
       :dataFormat="dataFormat"
       :dataSource="dataSource"
       @entityClick="getCountry"
@@ -24,33 +24,30 @@ export default {
   methods: {
     getCountry(event) {
       this.country = event.data.label;
-      this.$emit('selectedCountry', this.country);
-
+      this.$emit("selectedCountry", this.country);
     },
     getDataObjectForMap(trends) {
       const dataSource = [];
       trends.forEach(trend => {
-        if ('trends' in trend) {
+        if ("trends" in trend) {
           const trendingHashtag = trend.trends[0];
-        const id = countryIdsFusionCharts[trend.countryCode];
-        if (!id || !trendingHashtag) {
-          console.log('trending issue', trend)
-        } else {
-          let obj = {
-            id: id["ID"].toString(),
-            value: trendingHashtag.sentiment,
-            tooltext:
-              trend.country +
-              "{br}Trend:" +
-              trendingHashtag.name +
-              "{br}Tweet Volume: " +
-              trendingHashtag.tweetVolume,
-          };
-          dataSource.push(obj);
+          const id = countryIdsFusionCharts[trend.countryCode];
+          if (!id || !trendingHashtag) {
+            console.log("trending issue", trend);
+          } else {
+            let obj = {
+              id: id["ID"].toString(),
+              value: trendingHashtag.sentiment,
+              tooltext:
+                trend.country +
+                "{br}Trend:" +
+                trendingHashtag.name +
+                "{br}Tweet Volume: " +
+                trendingHashtag.tweetVolume
+            };
+            dataSource.push(obj);
+          }
         }
-
-        }
-        
       });
       return dataSource;
     }
@@ -103,7 +100,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .regions_div {
   width: 1200px;
