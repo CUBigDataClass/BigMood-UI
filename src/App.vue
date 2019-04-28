@@ -4,10 +4,10 @@
       <div class="back" v-if="isCityView" @click="showCountryView">
         <img src="./assets/ic-back.png">
       </div>
-      <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode"/>
+      <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode" :country="country"/>
       <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
-    <WordCloud class="word-cloud" :words="defaultWords" :urls="urls"/>
+    <WordCloud class="word-cloud" :words="defaultWords" :urls="urls" :key='isCityView'/>
     <TrendBarChart class="trends-volume" :barData="singleCountry"/>
   </main>
 </template>
@@ -41,7 +41,7 @@ export default {
       cityWords: null,
       singleCountry: [],
       country: "",
-      barChartData: []
+      barChartData: [],
     };
   },
   mounted() {
