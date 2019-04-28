@@ -161,6 +161,14 @@ html {
   grid-template-areas: "map map" "word-cloud trends-volume";
 }
 
+@media (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 400px 500px;
+    grid-template-areas: "map" "word-cloud" "trends-volume";
+  }
+}
+
 .map {
   grid-area: map;
 }
