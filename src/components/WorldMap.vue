@@ -2,8 +2,8 @@
   <div v-if="!loading">
     <fusioncharts
       :type="type"
-      :width="width"
-      :height="height"
+      width="100%"
+      height="500"
       :dataFormat="dataFormat"
       :dataSource="dataSource"
       @entityClick="getCountry"
@@ -100,7 +100,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .regions_div {
   width: 1200px;

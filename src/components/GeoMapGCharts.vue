@@ -1,50 +1,57 @@
 <template>
-  <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  <div id="chart_div" style="width: 100%; height: 500px;"></div>
 </template>
   
 <script>
 export default {
   name: "GeoMapGCharts",
-  props: ["countryCode", "cityTrends"],
+  props: {
+    countryCode: { type: String, default: "US" },
+    cityTrends: { type: Array, default: () => [] }
+  },
   data() {
     return {
       chart: null,
-      region: "IT",
+      data: null
     };
   },
-  watch: {
-    countryCode: function(newCode) {
-      this.region = newCode;
-    },
-    cityTrends: function(newCityTrends) {
-      this.cityTrends = newCityTrends;
-      const cityData = [];
+  mounted() {
+    google.charts.load("current", {
+      packages: ["geochart"],
+      mapsApiKey: "AIzaSyAUVVIxD52x1Yk5BhlwyTEjxzGrr_jsn-Q"
+    });
+    google.charts.setOnLoadCallback(this.setupChart);
+  },
+  computed: {
+    trends() {
+      return this.cityTrends.map(el => {
+        // Get names of top 3 trends
+        const trends = el.trends
+          .slice(0, 3)
+          .map(t => t.name)
+          .join("\n");
+
+        const tooltip = `Top Trends\n${trends}`;
+
+        return [el.city, el.trends[0].sentiment, tooltip];
+      });
+    }
+  },
+  methods: {
+    setupChart() {
       this.data = new google.visualization.DataTable();
+
       this.data.addColumn("string", "City");
       this.data.addColumn("number", "Sentiment");
       this.data.addColumn({ type: "string", role: "tooltip" });
-      newCityTrends.forEach(element => {
-        const tooltip =
-          "Top Trends\n" +
-          element.trends[0].name +
-          "\n" +
-          element.trends[1].name +
-          "\n" +
-          element.trends[2].name;
-        cityData.push([element.city, element.trends[0].sentiment, tooltip]);
-      });
-      this.data.addRows(cityData);
-      google.charts.setOnLoadCallback(this.drawRegionsMap);
-    }
-  },
-  created() {
-    google.charts.load("current", {
-      packages: ["geochart"],
-      mapsApiKey: ""
-    });
-  },
+      this.data.addRows(this.trends);
 
-  methods: {
+      this.chart = new google.visualization.GeoChart(
+        document.getElementById("chart_div")
+      );
+
+      this.drawRegionsMap();
+    },
     cityClickedHandler(event) {
       const row_index = this.chart.getSelection()[0]["row"];
       if (row_index != undefined) {
@@ -54,7 +61,7 @@ export default {
     },
     drawRegionsMap() {
       const options = {
-        region: this.region,
+        region: this.countryCode,
         displayMode: "markers",
         backgroundColor: "#2c3e50",
         colorAxis: {
@@ -65,9 +72,6 @@ export default {
         showZoomOut: true
       };
 
-      this.chart = new google.visualization.GeoChart(
-        document.getElementById("chart_div")
-      );
       google.visualization.events.addListener(
         this.chart,
         "select",
@@ -78,16 +82,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  height: 20%;
-  /* height: 20%; */
-}
-</style>
-
-
