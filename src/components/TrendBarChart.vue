@@ -3,8 +3,8 @@
     type="bar2d"
     data-format="json"
     :data-source="dataSource"
-    width="720px"
-    height="400px"
+    :width="720"
+    :height="400"
   ></fusioncharts>
 </template>
 
