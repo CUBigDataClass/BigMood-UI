@@ -18,17 +18,9 @@ export default {
     }
   },
   data() {
-    return {
-      loading: false
-    };
+    return {};
   },
   computed: {
-    barDataLoad() {
-      return this.barData.map(element => ({
-        label: element.name,
-        value: element.tweetVolume
-      }));
-    },
     dataSource() {
       return {
         chart: {
@@ -37,7 +29,10 @@ export default {
           aligncaptionwithcanvas: "0",
           theme: "candy"
         },
-        data: this.barData
+        data: this.barData.map(element => ({
+          label: element.name,
+          value: element.tweetVolume
+        }))
       };
     }
   }
