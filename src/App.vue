@@ -8,7 +8,7 @@
       <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
     <WordCloud class="word-cloud" :words="defaultWords" :urls="urls"/>
-    <TrendBarChart class="trends-volume" :barData="cityTrends"/>
+    <TrendBarChart class="trends-volume" :barData="singleCountry"/>
   </main>
 </template>
 
