@@ -39,7 +39,7 @@ export default {
       countryCode: null,
       cityUrls: {},
       cityWords: null,
-      singleCountry: null,
+      singleCountry: [],
       country: "", 
       barChartData: [],
     };

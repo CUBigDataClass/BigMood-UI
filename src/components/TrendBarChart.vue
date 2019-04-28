@@ -2,8 +2,8 @@
   <fusioncharts
     type="bar2d"
     data-format="json"
-    :dataSource="dataSource"
-    width="100%"
+    :data-source="dataSource"
+    width="720px"
     height="400px"
   ></fusioncharts>
 </template>
@@ -16,9 +16,6 @@ export default {
       type: Array,
       default: () => []
     }
-  },
-  data() {
-    return {};
   },
   computed: {
     dataSource() {
