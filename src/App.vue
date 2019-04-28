@@ -1,10 +1,7 @@
 <template>
   <main id="app" class="grid-container">
     <div class="map">
-      <CityView
-        v-if="isCityView"
-        :cityTrends="cityTrends"
-        :countryCode="countryCode" />
+      <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode"/>
       <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
     <WordCloud class="word-cloud" :words="defaultWords" :urls="urls"/>
@@ -40,12 +37,13 @@ export default {
       cityUrls: {},
       cityWords: null,
       singleCountry: [],
-      country: "", 
-      barChartData: [],
+      country: "",
+      barChartData: []
     };
   },
   mounted() {
     this.getTrends();
+    this.getGlobalTrends();
   },
   methods: {
     counter(arr) {
@@ -113,6 +111,17 @@ export default {
           this.error = error;
         })
         .finally(() => (this.loading = false));
+    },
+
+    getGlobalTrends() {
+      axios
+        .get("http://35.194.37.111:3000/bigmoodapi/globaltrends")
+        .then(response => {
+          this.singleCountry = response.data;
+        })
+        .catch(error => {
+          this.error = error;
+        });
     }
   }
 };
