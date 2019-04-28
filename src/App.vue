@@ -1,59 +1,52 @@
 <template>
-  <div id="app">
-    <NavBar/>
-    <!-- <div v-if="showCityView"> -->
-      <CityView
-        :cityTrends="cityTrends"
-        :countryCode="countryCode"
-        :urls="cityUrls"
-        :defaultWords="cityWords"
-        :countryTrends="singleCountry"
-        :country="country"
-      />
-    <!-- </div> -->
-    <!-- World View -->
-    <!-- <div v-else> -->
-      <div class="chart" v-if="!loading">
-        <WorldMap :data="countryTrends" @selectedCountry="showCityInfo"/>
+  <main id="app" class="grid-container">
+    <div class="map">
+      <div class="back" v-if="isCityView" @click="showCountryView">
+        <img src="./assets/ic-back.png">
       </div>
-      <div class="margin" v-if="!loading">
-        <WordCloud :words="defaultWords" :urls="urls"/>
-      </div>
-    <!-- </div> -->
-  </div>
+      <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode"/>
+      <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
+    </div>
+    <WordCloud class="word-cloud" :words="defaultWords" :urls="urls"/>
+    <TrendBarChart class="trends-volume" :barData="singleCountry"/>
+  </main>
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue";
 import WordCloud from "./components/WordCloud.vue";
 import WorldMap from "./components/WorldMap.vue";
 import CityView from "./components/CityView.vue";
+import TrendBarChart from "./components/TrendBarChart.vue";
 import axios from "axios";
 
 export default {
   name: "app",
   components: {
     WorldMap,
-    NavBar,
     WordCloud,
-    CityView
+    CityView,
+    TrendBarChart
   },
   data() {
     return {
       loading: true,
-      defaultWords: null,
+      isCityView: false,
+      defaultWords: [],
       urls: {},
       trends: [],
       countryTrends: [],
       cityTrends: [],
       countryCode: null,
       cityUrls: {},
-      showCityView: false,
       cityWords: null,
-      singleCountry: null,
-      showCityView: false,
-      country: ""
+      singleCountry: [],
+      country: "",
+      barChartData: []
     };
+  },
+  mounted() {
+    this.getTrends();
+    this.getGlobalTrends();
   },
   methods: {
     counter(arr) {
@@ -73,19 +66,27 @@ export default {
 
     showCityInfo(country) {
       this.country = country;
+      this.isCityView = true;
       this.cityTrends = this.trends.filter(
         item => item.country == country && item.locationType == "City"
       );
       if (this.cityTrends) {
         this.countryCode = this.cityTrends[0].countryCode;
-        [this.cityWords, this.cityUrls] = this.getWords(this.cityTrends);
+        [this.defaultWords, this.urls] = this.getWords(this.cityTrends);
         this.singleCountry = this.trends.filter(
           item => item.country == country && item.locationType == "Country"
         )[0].trends;
-        this.showCityView = true;
       } else {
         console.log("No Trends");
       }
+    },
+
+    showCountryView() {
+      this.isCityView = false
+      this.defaultWords = this.countryWords
+      this.singleCountry = this.globalTrends
+      this.urls = this.countryUrls
+
     },
 
     getWords(trends) {
@@ -106,48 +107,98 @@ export default {
         });
       });
       return [defaultWords, urls];
+    },
+    getTrends() {
+      axios
+        .get("http://35.194.37.111:3000/bigmoodapi/trends")
+        .then(response => {
+          this.trends = response.data;
+          [this.defaultWords, this.urls] = this.getWords(this.trends);
+          this.countryWords = this.defaultWords
+          this.countryUrls = this.urls
+          this.countryTrends = this.trends.filter(
+            item => item.locationType == "Country"
+          );
+        })
+        .catch(error => {
+          this.error = error;
+        })
+        .finally(() => (this.loading = false));
+    },
+
+    getGlobalTrends() {
+      axios
+        .get("http://35.194.37.111:3000/bigmoodapi/globaltrends")
+        .then(response => {
+          this.singleCountry = response.data;
+          this.globalTrends = this.singleCountry;
+        })
+        .catch(error => {
+          this.error = error;
+        });
     }
-  },
-  beforeCreate() {
-    axios
-      .get("http://35.239.169.14:3000/bigmoodapi/trends")
-      .then(response => {
-        this.trends = response.data;
-        [this.defaultWords, this.urls] = this.getWords(this.trends);
-        this.countryTrends = this.trends.filter(
-          item => item.locationType == "Country"
-        );
-      })
-      .catch(error => {
-        this.error = error;
-      })
-      .finally(() => (this.loading = false));
   }
 };
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background-image: url("./assets/bg.png");
-  background-size: cover;
-}
-.chart {
-  margin-top: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.margin {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 body {
-  background-image: url("./assets/bg.png");
-  background-size: cover;
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: #f8f9f9;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 500px 1max-content;
+  grid-template-areas: "map map" "word-cloud trends-volume";
+}
+
+@media (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 400px 500px;
+    grid-template-areas: "map" "word-cloud" "trends-volume";
+  }
+}
+
+.map {
+  grid-area: map;
+}
+
+.word-cloud {
+  grid-area: word-cloud;
+}
+
+.trends-volume {
+  grid-area: trends-volume;
+}
+
+.back {
+  position: fixed;
+  cursor: pointer;
+  left: 32px;
+  top: 32px;
+  z-index: 1;
+  font-size: 18px;
+  color: #fff;
 }
 </style>
