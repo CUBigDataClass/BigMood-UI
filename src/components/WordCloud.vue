@@ -38,7 +38,7 @@ export default {
 </script>
 <style>
 .wordcloud {
-  background-color: #2d4053;
+  background-color: #262933;
 }
 </style>
 
