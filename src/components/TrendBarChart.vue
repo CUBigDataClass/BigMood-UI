@@ -3,8 +3,8 @@
     type="bar2d"
     data-format="json"
     :data-source="dataSource"
-    :width="720"
-    :height="400"
+    :width="width"
+    :height="height"
   ></fusioncharts>
 </template>
 
@@ -16,6 +16,12 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  data() {
+    return {
+      height: "100%",
+      width: "100%"
+    };
   },
   computed: {
     dataSource() {
