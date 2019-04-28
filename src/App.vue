@@ -8,7 +8,7 @@
       <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
     <WordCloud class="word-cloud" :words="defaultWords" :urls="urls"/>
-    <TrendBarChart class="trends-volume" :barData="barChartData"/>
+    <TrendBarChart class="trends-volume" :barData="cityTrends"/>
   </main>
 </template>
 
@@ -71,7 +71,6 @@ export default {
       );
       if (this.cityTrends) {
         this.countryCode = this.cityTrends[0].countryCode;
-        this.barChartData = this.cityTrends;
         [this.cityWords, this.cityUrls] = this.getWords(this.cityTrends);
         this.singleCountry = this.trends.filter(
           item => item.country == country && item.locationType == "Country"

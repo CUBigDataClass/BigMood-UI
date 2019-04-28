@@ -23,8 +23,8 @@ export default {
     };
   },
   computed: {
-    barData() {
-      return this.countryTrends.map(element => ({
+    barDataLoad() {
+      return this.barData.map(element => ({
         label: element.name,
         value: element.tweetVolume
       }));
