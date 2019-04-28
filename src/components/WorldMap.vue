@@ -1,58 +1,26 @@
 <template>
-  <div v-if="!loading">
-    <fusioncharts
-      :type="type"
-      width="100%"
-      height="500"
-      :dataFormat="dataFormat"
-      :dataSource="dataSource"
-      @entityClick="getCountry"
-    ></fusioncharts>
-  </div>
+  <fusioncharts
+    :type="type"
+    width="100%"
+    height="500"
+    :dataFormat="dataFormat"
+    :dataSource="dataSource"
+    @entityClick="getCountry"
+  ></fusioncharts>
 </template>
 
 <script>
+import Vue from "vue";
 import countryIdsFusionCharts from "../data/fusionChartsWorldIds.json";
+
 export default {
   name: "WorldMap",
-  props: ["data"],
-  created() {
-    this.trendData = this.getDataObjectForMap(this.data);
-    this.dataSource["data"] = this.trendData;
-    this.loading = false;
-  },
-  methods: {
-    getCountry(event) {
-      this.country = event.data.label;
-      this.$emit("selectedCountry", this.country);
-    },
-    getDataObjectForMap(trends) {
-      const dataSource = [];
-      trends.forEach(trend => {
-        if ("trends" in trend) {
-          const trendingHashtag = trend.trends[0];
-          const id = countryIdsFusionCharts[trend.countryCode];
-          if (!id || !trendingHashtag) {
-            console.log("trending issue", trend);
-          } else {
-            let obj = {
-              id: id["ID"].toString(),
-              value: trendingHashtag.sentiment,
-              tooltext:
-                trend.country +
-                "{br}Trend:" +
-                trendingHashtag.name +
-                "{br}Tweet Volume: " +
-                trendingHashtag.tweetVolume
-            };
-            dataSource.push(obj);
-          }
-        }
-      });
-      return dataSource;
+  props: {
+    data: {
+      type: Array,
+      default: () => []
     }
   },
-
   data() {
     return {
       width: "70%",
@@ -92,10 +60,53 @@ export default {
               color: "#32CD32"
             }
           ]
-        },
-        data: this.trendData
+        }
       }
     };
+  },
+  computed: {
+    trendData() {
+      return this.getDataObjectForMap(this.data);
+    }
+  },
+  methods: {
+    getCountry(event) {
+      this.country = event.data.label;
+      this.$emit("selectedCountry", this.country);
+    },
+    getDataObjectForMap(trends) {
+      const dataSource = [];
+      trends.forEach(trend => {
+        if ("trends" in trend) {
+          const trendingHashtag = trend.trends[0];
+          const id = countryIdsFusionCharts[trend.countryCode];
+          if (!id || !trendingHashtag) {
+            console.log("trending issue", trend);
+          } else {
+            let obj = {
+              id: id["ID"].toString(),
+              value: trendingHashtag.sentiment,
+              tooltext:
+                trend.country +
+                "{br}Trend:" +
+                trendingHashtag.name +
+                "{br}Tweet Volume: " +
+                trendingHashtag.tweetVolume
+            };
+            dataSource.push(obj);
+          }
+        }
+      });
+      return dataSource;
+    }
+  },
+  watch: {
+    trendData: {
+      immediate: true,
+      handler(data) {
+        Vue.set(this.dataSource, "data", data);
+      }
+    }
   }
 };
 </script>
