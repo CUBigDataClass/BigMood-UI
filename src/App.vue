@@ -1,6 +1,9 @@
 <template>
   <main id="app" class="grid-container">
     <div class="map">
+      <div class="back" v-if="isCityView" @click="isCityView = false">
+        <img src="./assets/ic-back.png">
+      </div>
       <CityView v-if="isCityView" :cityTrends="cityTrends" :countryCode="countryCode"/>
       <WorldMap v-else :data="countryTrends" @selectedCountry="showCityInfo"/>
     </div>
@@ -168,5 +171,15 @@ html {
 
 .trends-volume {
   grid-area: trends-volume;
+}
+
+.back {
+  position: fixed;
+  cursor: pointer;
+  left: 32px;
+  top: 32px;
+  z-index: 1;
+  font-size: 18px;
+  color: #fff;
 }
 </style>
